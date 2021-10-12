@@ -1,7 +1,5 @@
 ﻿Country,Economic status,Coastal population,Waste generation rate (kg/person/day),% Plastic in waste stream,% Inadequately managed waste,% Littered waste,Waste generation (kg/day),Plastic waste generation (kg/day),Inadequately managed plastic waste (kg/day),"Plastic waste littered
- (kg/day)",Mismanaged plastic waste (kg/person/day),"Mismanaged plastic waste in 2010
- (tonnes)","Mismanaged plastic waste in 2010
- (tonnes)"
+ (kg/day)",Mismanaged plastic waste (kg/person/day),"Mismanaged plastic waste in 2010 in tonnes","Mismanaged plastic waste in 2010 in tonnes"
 Albania,LMI,2530533,0.77,8.95,44.6676032,2,1948510.41,174391.6817,77896.58439,3487.833634,0.032160979,29705.31258,63050.75025
 Algeria8,UMI,16556580,1.2,11.95,58.0694479,2,19867896,2374213.572,1378692.713,47484.27144,0.086139588,520554.5994,1017444.301
 Angola,LMI,3790041,0.48,12.95,70.7150141,2,1819219.68,235588.9486,166596.7582,4711.778971,0.045199653,62527.61606,136769.5391
