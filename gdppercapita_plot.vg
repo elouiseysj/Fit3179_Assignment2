@@ -1,0 +1,147 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 450,
+    "height": 500,
+    "title": "GDP per Capita VS Plastic waste generation per person(kg/day/person)",
+    "data": {
+      "url": "https://raw.githubusercontent.com/elouiseysj/Fit3179_Assignment2/main/plastic_pollution_dataset_.csv"
+    },
+    "params": [
+      
+      {
+        "name": "Continent_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "labels":[
+            "Show All",
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+          ],
+          "name": "Continent Selection: "
+        }
+      }
+    ],
+    "transform": [
+    
+      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"}
+    ],
+    "encoding": {
+        "x": {
+            "field": "GDP per capita",
+            "type": "quantitative",
+            "title": "GDP per capita",
+            "axis": {"tickCount": 6},
+            "scale": {"type": "linear", "domain": [0,120000]}
+      },
+      "y": {
+        "field": "Plastic waste generation per person(kg/day/person)",
+        "type": "quantitative",
+        "axis": {"tickCount": 6},
+        "scale": {"type": "linear", "domain": [0,4]}
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["Continent"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Coastal population",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania"
+              ],
+              "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {"field": "GDP per capita", "type": "quantitative"},
+            {
+              "field": "Plastic waste generation per person(kg/day/person)",
+              "type": "quantitative",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country'] == 'Trinidad and Tobago' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Germany' ||  datum['Country'] == 'United States of America'|| datum['Country'] == 'Tonga' || datum['Country'] == 'Argentina' || datum['Country'] == 'Guyana' || datum['Country'] == 'Norway' || datum['Country'] == 'Equatorial Guinea' || datum['Country'] == 'Mauritius' || datum['Country'] == 'Kuwait' ",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {"field": "GDP per capita", "type": "quantitative", "format": ".2f"},
+            {
+              "field": "Plastic waste generation per person(kg/day/person)",
+              "type": "quantitative",
+              "format": ".2f"
+            }
+          ]
+        }
+      }
+    ]
+  }
