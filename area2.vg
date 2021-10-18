@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Global Plastic Production (1950-2015)",
+    "data": {"url": "https://raw.githubusercontent.com/elouiseysj/Fit3179_Assignment2/main/global-plastic-fate.csv"},
+    "width": 600, "height": 600,
+    "mark": "area",
+    "encoding": {
+      "x": {
+        "timeUnit": "year", "field": "Year", "title": "Year",
+        "axis": {"format": "%Y"}
+      },
+      "y": {
+        "title": "Percentage",
+        "aggregate": "sum", "field": "Estimated historic plastic fate",
+        "stack": "normalize"
+  
+      },
+      "color": {"field":"Entity", "title":"Disposal Method","scale":{"range": ["#377eb8","#a6cee3","#c9f5d9"]}},
+      "tooltip": [
+        {"field": "Entity", "title":"Disposal Method", "type": "nominal"},
+        {"field": "Estimated historic plastic fate", "type": "quantitative"},
+        {"field": "Year", "timeUnit": "year", "title":"Year"}
+           ]
+        
+    }
+  }

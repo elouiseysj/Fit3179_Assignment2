@@ -4,7 +4,7 @@
     "height": 500,
     "title": "GDP per Capita VS Plastic waste generation per person(kg/day/person)",
     "data": {
-      "url": "https://raw.githubusercontent.com/elouiseysj/Fit3179_Assignment2/main/plastic_pollution_dataset_.csv"
+      "url": "https://raw.githubusercontent.com/elouiseysj/Fit3179_Assignment2/main/ppd.csv"
     },
     "params": [
       
@@ -44,13 +44,13 @@
             "type": "quantitative",
             "title": "GDP per capita",
             "axis": {"tickCount": 6},
-            "scale": {"type": "linear", "domain": [0,120000]}
+            "scale": {"type": "log", "domain": [1000,100000]}
       },
       "y": {
         "field": "Plastic waste generation per person(kg/day/person)",
         "type": "quantitative",
         "axis": {"tickCount": 6},
-        "scale": {"type": "linear", "domain": [0,4]}
+        "scale": {"type": "linear", "domain": [0,1]}
       }
     },
     "layer": [

@@ -15,11 +15,11 @@
 }
 
 .nav__links a:link {
-	color: lightsteelblue;
+	color: green;
 }
 
 .nav__links a:visited {
-	color: lightsteelblue;
+	color: green;
 }
 
 .nav__links a:hover {
@@ -113,6 +113,7 @@ a.button1:hover{
 	}
 }
 
+
 h2 {
     font-weight: 800;
     text-align: center;
@@ -132,9 +133,9 @@ body {
 }
 
 .page {
-    width: 1400px;
-    background-color: white;
-    margin: 0;
+    width: 1150px;
+    background-color: transparent;
+    margin: auto;
     padding: 50px;
     padding-top: 35px;
 }
@@ -192,3 +193,4 @@ h1 {
 .bold {
 	font-weight: 800;
 }
+
